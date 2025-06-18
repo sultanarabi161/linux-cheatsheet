@@ -1,0 +1,212 @@
+# Practical Linux Command Reference - By Sultan Arabi  
+**Full Version - 1.0**  
+
+---
+
+## 🚀 **BASIC COMMANDS**  
+| Command | Description | Example |
+|---------|-------------|---------|
+| `pwd` | Show current directory | `pwd` |
+| `clear` | Clear terminal screen | `clear` |
+| `whoami` | Show current username | `whoami` |
+| `date` | Show system date/time | `date` |
+| `cal` | Show calendar | `cal 2024` |
+| `history` | Show command history | `history \| grep "apt"` |
+
+---
+
+## 📂 **FILE & DIRECTORY MANAGEMENT**  
+| Command | Description | Example |
+|---------|-------------|---------|
+| `ls -l` | Detailed file listing | `ls -l /home` |
+| `ls -a` | Show hidden files | `ls -a` |
+| `mkdir` | Create directory | `mkdir new_folder` |
+| `mkdir -p` | Create nested directories | `mkdir -p dir1/dir2/dir3` |
+| `cd` | Change directory | `cd /var/www` |
+| `cd ..` | Move to parent directory | `cd ..` |
+| `cd ~` | Go to home directory | `cd ~` |
+| `rmdir` | Remove empty directory | `rmdir empty_dir` |
+| `rm -r` | Delete directory recursively | `rm -r old_dir` |
+| `touch` | Create empty file | `touch file.txt` |
+| `nano` | Text editor | `nano document.txt` |
+| `cat` | Display file content | `cat /etc/os-release` |
+| `head` | Show first N lines | `head -n 5 log.txt` |
+| `tail` | Show last N lines | `tail -n 10 access.log` |
+| `cp` | Copy file | `cp file.txt backup/` |
+| `cp -r` | Copy directory | `cp -r dir1 dir2` |
+| `mv` | Move/rename file | `mv old.txt new.txt` |
+| `rm` | Delete file | `rm temp.txt` |
+
+---
+
+## 🔍 **SEARCH & FIND**  
+| Command | Description | Example |
+|---------|-------------|---------|
+| `find` | Search files by name | `find / -name "*.conf"` |
+| `grep` | Search text in files | `grep "error" /var/log/syslog` |
+| `grep -r` | Recursive search | `grep -r "TODO" /home/user/` |
+| `which` | Locate a command | `which python3` |
+| `locate` | Fast file search (updatedb) | `locate nginx.conf` |
+| `whereis` | Find binary/source files | `whereis bash` |
+
+---
+
+## 📝 **FILE PROCESSING**  
+| Command | Description | Example |
+|---------|-------------|---------|
+| `wc` | Word/line count | `wc -l data.csv` |
+| `sort` | Sort lines | `sort names.txt` |
+| `uniq` | Remove duplicates | `sort file.txt \| uniq` |
+| `diff` | Compare files | `diff file1.txt file2.txt` |
+| `tee` | Output to screen & file | `echo "Hello" \| tee log.txt` |
+| `cut` | Extract columns | `cut -d',' -f1 data.csv` |
+| `tr` | Translate characters | `cat file.txt \| tr 'a-z' 'A-Z'` |
+
+---
+
+## ⚙️ **SYSTEM ADMIN**  
+### 🖥️ **Process Management**  
+| Command | Description | Example |
+|---------|-------------|---------|
+| `top` | Live process monitor | `top` |
+| `htop` | Enhanced top (install first) | `htop` |
+| `ps` | Process status | `ps aux \| grep nginx` |
+| `kill` | Terminate process | `kill -9 1234` |
+
+### 💾 **Disk & Memory**  
+| Command | Description | Example |
+|---------|-------------|---------|
+| `df -h` | Disk space (human-readable) | `df -h /` |
+| `du -sh` | Directory size | `du -sh /var/log/` |
+| `free -h` | Memory usage | `free -h` |
+
+### 🔧 **System Info**  
+| Command | Description | Example |
+|---------|-------------|---------|
+| `uname -a` | Kernel/system info | `uname -a` |
+| `uptime` | System uptime | `uptime` |
+| `lscpu` | CPU information | `lscpu` |
+| `lsblk` | Block devices | `lsblk` |
+
+---
+
+## 👥 **USER MANAGEMENT** (Requires sudo)  
+| Command | Description | Example |
+|---------|-------------|---------|
+| `sudo adduser` | Create user | `sudo adduser john` |
+| `sudo passwd` | Change password | `sudo passwd john` |
+| `sudo deluser` | Delete user | `sudo deluser john` |
+| `id` | User info | `id` |
+| `who` | Logged-in users | `who` |
+| `last` | Login history | `last` |
+
+---
+
+## 📦 **PACKAGE MANAGEMENT**  
+### Debian/Ubuntu (APT)  
+| Command | Description | Example |
+|---------|-------------|---------|
+| `sudo apt update` | Update package list | `sudo apt update` |
+| `sudo apt upgrade` | Upgrade packages | `sudo apt upgrade` |
+| `sudo apt install` | Install package | `sudo apt install nginx` |
+| `sudo apt remove` | Remove package | `sudo apt remove apache2` |
+
+### RHEL/CentOS (YUM/DNF)  
+| Command | Description | Example |
+|---------|-------------|---------|
+| `sudo yum update` | Update packages | `sudo yum update` |
+| `sudo yum install` | Install package | `sudo yum install httpd` |
+
+---
+
+## 🔒 **PERMISSIONS**  
+| Command | Description | Example |
+|---------|-------------|---------|
+| `chmod` | Change permissions | `chmod 755 script.sh` |
+| `chown` | Change owner | `sudo chown user:group file.txt` |
+| `chgrp` | Change group | `sudo chgrp www-data /var/www` |
+
+---
+
+## 🌐 **NETWORKING**  
+| Command | Description | Example |
+|---------|-------------|---------|
+| `ping` | Test connectivity | `ping google.com` |
+| `curl` | HTTP requests | `curl -I example.com` |
+| `wget` | Download files | `wget https://example.com/file.zip` |
+| `ifconfig` | Network interfaces | `ifconfig` or `ip a` |
+| `netstat` | Network stats | `netstat -tulnp` |
+| `traceroute` | Network path | `traceroute google.com` |
+| `ssh` | Remote login | `ssh user@192.168.1.100` |
+
+---
+
+## 🛠️ **ARCHIVES & COMPRESSION**  
+| Command | Description | Example |
+|---------|-------------|---------|
+| `tar -cvf` | Create tar archive | `tar -cvf backup.tar /home` |
+| `tar -xvf` | Extract tar | `tar -xvf backup.tar` |
+| `gzip` | Compress file | `gzip largefile.txt` |
+| `gunzip` | Decompress | `gunzip file.gz` |
+| `zip` | Create zip | `zip archive.zip files/` |
+| `unzip` | Extract zip | `unzip archive.zip` |
+
+---
+
+## 📜 **BASH SCRIPTING**  
+| Command | Description | Example |
+|---------|-------------|---------|
+| `chmod +x` | Make executable | `chmod +x script.sh` |
+| `./script.sh` | Run script | `./backup.sh` |
+| `bash script.sh` | Execute with bash | `bash test.sh` |
+
+---
+
+## 🐱 **GIT ESSENTIALS**  
+| Command | Description | Example |
+|---------|-------------|---------|
+| `git clone` | Clone repository | `git clone https://github.com/user/repo.git` |
+| `git status` | Check changes | `git status` |
+| `git add` | Stage files | `git add .` |
+| `git commit` | Save changes | `git commit -m "Update"` |
+| `git push` | Upload to remote | `git push origin main` |
+| `git pull` | Download updates | `git pull` |
+
+---
+
+## ⚡ **SHORTCUTS**  
+| Shortcut | Description |
+|----------|-------------|
+| `Ctrl+C` | Stop current command |
+| `Ctrl+Z` | Pause process (fg to resume) |
+| `Ctrl+D` | End of input (logout) |
+| `Ctrl+L` | Clear screen |
+| `Ctrl+A` | Move to line start |
+| `Ctrl+E` | Move to line end |
+| `Ctrl+U` | Delete entire line |
+| `!!` | Repeat last command |
+| `!ls` | Run last 'ls' command |
+| `↑/↓` | Command history |
+
+---
+
+## 🐧 **CLOUD SHELL SPECIFICS** (Google Cloud/AWS)  
+| Command | Description | Example |
+|---------|-------------|---------|
+| `gcloud init` | Initialize gcloud | `gcloud init` |
+| `gsutil ls` | List Cloud Storage | `gsutil ls gs://bucket` |
+| `gcloud projects list` | List projects | `gcloud projects list` |
+
+---
+
+### 📌 **How to Save This Cheat Sheet**  
+1. **Save as Text File**:  
+   ```bash
+   curl -o linux_cheatsheet.txt https://raw.githubusercontent.com/sultanarabi161/linux-cheatsheet/main/cheatsheet.txt
+   ```
+2. **View Anytime**:  
+   ```bash
+   cat linux_cheatsheet.txt | less
+   ```
+
+**Happy Linux-ing!** 🐧
